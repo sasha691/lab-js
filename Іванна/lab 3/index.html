@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 3</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="bd-1">
+        <div>
+            <p class="md-2">Шукати</p>
+            <select name="catalog" id="catalog">
+                <option value="1">Name</option>
+                <option value="2">Surname</option>
+                <option value="3">Email</option>
+                <option value="4">Region</option>
+                <option value="5">City</option>
+            </select>
+            <input id="sort" type="text">
+            <button id="create">Додати</button>
+        </div>
+    </div>
+    <div>
+        <dialog>
+            <div class="fff">
+                <p class="md">Створити новий <br> елемент</p>
+                <input type="text" id="input1" placeholder="name" required>
+                <input type="text" id="input2" placeholder="Surname" required>
+                <input type="email"id="input3" placeholder="email" required>
+                <input type="text" id="input4" placeholder="Region" required>
+                <input type="text" id="input5" placeholder="City" required>
+                <button class="BtnClose" id="close" type="submit">&times;</button>
+                <div>
+                    <button class="BtnCheck" id="createPeople" type="submit">&check;</button>
+                    <button id="exit">скасувати</button>
+                </div>
+            </div>
+        </dialog>
+    </div>
+    <dialog id="menu">
+        <div class="fff">
+            <p class="md">Змінити елемент</p>
+            <input type="text" id="edit1"  placeholder="name">
+            <input type="text" id="edit2"   placeholder="Surname">
+            <input type="email"id="edit3"   placeholder="email">
+            <input type="text" id="edit4"   placeholder="Region">
+            <input type="text" id="edit5"   placeholder="City">
+            <button class="BtnClose" onclick="menu.close()">&times;</button>
+            <div>
+                <button class="BtnCheck" id="BtnEdit">&check;</button>
+                <button onclick="menu.close()">скасувати</button>
+            </div>
+        </div>
+    </dialog>
+    <div class="Tbl">
+        <table id="Tbl">
+        </table>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

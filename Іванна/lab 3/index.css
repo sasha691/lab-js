@@ -1,0 +1,93 @@
+dialog{
+  z-index: 100;
+ }
+
+tables,th,td{
+    border: 3px solid grey;
+    text-align:center;
+    
+  } 
+  
+  th,td{
+     padding:10px;
+  }
+  caption{
+    font-size:20px;
+    color:rgb(0, 0, 0);
+    font-weight: 530;
+  }
+ table{
+border-collapse: collapse;
+  background-color: rgb(255, 255, 255);
+ }
+ .bd-1{
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+ }
+ body{
+  background-color: rgb(154, 152, 152);
+  font-family: arial;
+ }
+
+ th.i{
+  cursor: pointer;
+ }
+
+ .BtnDelete{
+  background-color: red;
+  font-size: 1.2rem;
+  color: rgb(253, 253, 253);
+  font-weight: 300;
+ }
+ .BtnClose{
+  background-color: red;
+  font-size: 1.2rem;
+  color: rgb(253, 253, 253);
+  font-weight: 300;
+  position: absolute;
+  margin-top: -85%;
+  margin-left: 77%;
+ }
+ 
+ .BtnCheck{
+  background-color: rgb(9, 189, 9);
+  font-size: 0.8rem;
+  color: rgb(253, 253, 253);
+  font-weight: 300;
+ }
+ button{
+  cursor: pointer;
+ }
+ p.md{
+  z-index: 200;
+  font-weight: bold;
+  text-align: center;
+ }
+ p.md-2{
+  text-align: center;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+ }
+
+ .BtnEdit{
+  position: relative;
+  left: -10%;
+  bottom: 10%;
+ }
+
+ .Tbl{
+  display: flex;
+  justify-content: center;
+ }
+
+ .fff{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+
+ .fff div{
+  display: flex;
+  justify-content: center;
+ }
