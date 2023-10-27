@@ -150,9 +150,13 @@ SortingInput.oninput=function(){
 
 
 function editElement(index){
+    InputElementEdit1.value = people[index].Name
+    InputElementEdit2.value = people[index].Surname
+    InputElementEdit3.value = people[index].Email
+    InputElementEdit4.value = people[index].Region
+    InputElementEdit5.value = people[index].City
     menu.showModal()
-    
-    BtnEdit.onclick=function getEditElement(index){
+    BtnEdit.onclick=function getEditElement(index){ 
         if(
         InputElementEdit1.value==''||
         InputElementEdit2.value==''||
