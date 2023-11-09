@@ -8,10 +8,19 @@ document.querySelector('#bth').addEventListener('click', () => {
 })
 
 
-// це не працює
-document.querySelectorAll('#conteiner2 input[type="checkbox"]').forEach(function(){
-    this.addEventListener('change', (element) => {
-        if(element.checked)
-            document.querySelector('#conteiner2 div').innerHTML = document.querySelector('#conteiner2')
+
+const divText = document.querySelector('.resultDiv')
+
+document.querySelectorAll('#conteiner2 input[type="checkbox"]').forEach((checkbox) => {
+    checkbox.addEventListener('change', () => {
+        if(checkbox.checked){
+            divText.innerHTML += ' ' + document.querySelector(`label[for="${checkbox.name}"]`).textContent
+        }
+        if(!checkbox.checked){
+            text = document.querySelector(`label[for="${checkbox.name}"]`).textContent
+            regeexp = new RegExp(`\\b${text}\\b`,'g')
+            console.log(regeexp)
+            divText.innerHTML = divText.innerHTML.replace(regeexp, "")
+        }
     })
 })
