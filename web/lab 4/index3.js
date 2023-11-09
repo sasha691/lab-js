@@ -7,6 +7,8 @@ document.querySelector('#bth').addEventListener('click', () => {
     })
 })
 
+
+// це не працює
 document.querySelectorAll('#conteiner2 input[type="checkbox"]').forEach(function(){
     this.addEventListener('change', (element) => {
         if(element.checked)
