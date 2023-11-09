@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        section.active {
+            background-color: lightblue;
+        }
+        .block {
+            width: 150px;
+            height: 150px;
+            background-color: #3498db;
+            transform-origin: center;
+            transform: rotate(0deg);
+            transition: transform 0.3s;
+        }
+
+        input[type="range"] {
+            display: block;
+            margin: 20px 0;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Таблиця множення</h1>
+        <p id="score">Загальний рахунок: 0</p>
+        <button id="nextTask">Наступне завдання</button>
+        <p id="task"></p>
+        <form id="answerForm">
+            <input type="number" name="userAnswer"  id="answer"><label for="answer" id="label1"></label><br>
+            <button type="submit">Перевірити</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <div>
+        <form id="myForm">
+            <section>
+                <label for="name">Ім'я:</label>
+                <input type="text" id="name" name="name">
+            </section>
+            <section>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </section>
+            <section>
+                <label for="message">Повідомлення:</label>
+                <textarea id="message" name="message"></textarea>
+            </section>
+        </form>
+    </div>
+    <div>
+        <div class="block" id="resizeRotateBlock"></div>
+        <input type="range" id="sizeRange" min="50" max="300" step="10" value="150">
+        <input type="range" id="rotateRange" min="0" max="360" step="10" value="0">
+    </div>
+    <script src="static/app2.js"></script>
+    <script src="static/index.js"></script>
+    <script src="static/index2.js"></script>
+</body>
+</html>
