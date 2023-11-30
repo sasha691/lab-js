@@ -45,10 +45,7 @@ class MultiplicationTableTest {
     }
 
     shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = this.getRandomNumber(0, i)
-            [array[i], array[j]] = [array[j], array[i]]
-        }
+        array.sort(() => Math.random() - 0.5)
         return array
     }
 
