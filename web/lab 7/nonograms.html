@@ -2,7 +2,10 @@
 <html>
   <head>
     <title>Lab 7: Nonograms!</title>
-    <link href="../../../DocLib/2023_JS_&#1047;&#1072;&#1074;&#1076;&#1072;&#1085;&#1085;&#1103;%20&#1076;&#1086;%20&#1083;&#1072;&#1073;%20&#1088;&#1086;&#1073;&#1110;&#1090;/JS_&#1051;&#1072;&#1073;%20&#1088;&#1086;&#1073;%20&#8470;7%20&#1040;&#1085;&#1110;&#1084;&#1072;&#1094;&#1110;&#1111;%20JavaScript%20&#1110;%20DOM/nonograms.css" type="text/css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="nonograms.css" type="text/css" rel="stylesheet">
+    <script src="nonograms.js"></script>
   </head>
   <body>
     <h1>Nonogram Puzzle!</h1>
@@ -70,5 +73,11 @@
         <div class="box horizontal-divider"></div>
       </div>
     </div>
+    <button id="Btn">очистити</button>
+    <dialog id="dialog">
+      <p>Ви впевнені?</p>
+      <button data-dialog="true">так</button>
+      <button data-dialog="false">ні</button>
+    </dialog>
   </body>
 </html>

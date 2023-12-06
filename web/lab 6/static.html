@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shapes Drawing</title>
+    <script>
+        class Shape {
+            static total = 100;
+
+            constructor(a) {
+                this.a = a;
+            }
+
+            static fill() {
+                Shape.total = 100;
+                console.log('Paint refilled to 100%.');
+            }
+
+            draw() {
+                if (Shape.total >= this.a) {
+                    console.log(`Drawing a shape of size ${this.a} with color quantity ${this.a}.`);
+                    Shape.total -= this.a;
+                    document.getElementById('log').innerHTML += `Drawing a shape of size ${this.a} with color quantity ${this.a}.<br>`;
+                } else {
+                    console.log('Not enough paint to draw this shape.');
+                    document.getElementById('log').innerHTML += 'Not enough paint to draw this shape.<br>';
+                }
+            }
+        }
+
+        // Функції для взаємодії з класом Shape через кнопки
+        function drawShape(size) {
+            const shape = new Shape(size);
+            shape.draw();
+            document.getElementById('remainingPaint').innerHTML = `Remaining paint: ${Shape.total}`;
+        }
+
+        function fillPaint() {
+            Shape.fill();
+            document.getElementById('remainingPaint').innerHTML = 'Remaining paint: 100';
+        }
+    </script>
+</head>
+<body>
+    <h1>Shapes Drawing</h1>
+    <button onclick="drawShape(30)">Draw Shape (Size 30)</button>
+    <button onclick="drawShape(50)">Draw Shape (Size 50)</button>
+    <button onclick="fillPaint()">Refill Paint</button>
+    <div id="log"></div>
+    <p id="remainingPaint">Remaining paint: 100</p>
+</body>
+</html>

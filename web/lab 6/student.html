@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="studentTable"></div>
+
+    <script>
+        class Student {
+            constructor(lastName, firstName, grades) {
+                this.lastName = lastName;
+                this.firstName = firstName;
+                this.grades = grades;
+            }
+        }
+
+        class ListOfStudents {
+            constructor(students) {
+                this.students = students;
+            }
+
+            getTableList() {
+                let table = "<table><tr><th>Last Name</th><th>First Name</th><th>Grades</th></tr>";
+                for (let student of this.students) {
+                    table += `<tr><td>${student.lastName}</td><td>${student.firstName}</td><td>${student.grades.join(', ')}</td></tr>`;
+                }
+                table += "</table>";
+                return table;
+            }
+        }
+
+        class StylesTable extends ListOfStudents {
+            constructor(students) {
+                super(students);
+            }
+
+            getStyles() {
+                return "table { border-collapse: collapse; } th, td { border: 1px solid black; padding: 8px; }";
+            }
+
+            getTableList() {
+                let tableWithStyles = super.getTableList();
+                return `<style>${this.getStyles()}</style>${tableWithStyles}`;
+            }
+
+            getAvg() {
+                for (let student of this.students) {
+                    let sum = student.grades.reduce((acc, val) => acc + val, 0);
+                    let avg = sum / student.grades.length;
+                    student.avgGrade = avg.toFixed(2);
+                }
+            }
+
+            getTotalAvg() {
+                let totalSum = 0;
+                let totalStudents = this.students.length;
+                for (let student of this.students) {
+                    totalSum += parseFloat(student.avgGrade);
+                }
+                return (totalSum / totalStudents).toFixed(2);
+            }
+        }
+
+        // Приклад використання класів:
+
+        const students = [
+            new Student('Doe', 'John', [85, 90, 92]),
+            new Student('Smith', 'Alice', [70, 75, 80]),
+            new Student('Johnson', 'Emily', [92, 88, 94])
+        ];
+
+        const styledTable = new StylesTable(students);
+        document.getElementById('studentTable').innerHTML = styledTable.getTableList(); // Додавання таблиці до HTML
+
+        styledTable.getAvg(); // Розрахунок середніх оцінок кожного студента
+        console.log(styledTable.getTotalAvg()); // Виведення загального середнього балу групи
+    </script>
+</body>
+</html>

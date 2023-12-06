@@ -13,6 +13,10 @@ h1 {
   border: 1px solid #111;
 }
 
+.box:hover {
+  box-shadow: 0px 0px 2px 2px #111111;
+}
+
 .box, .col-num-box, .row-num-box {
   line-height: 24pt;
 }
@@ -162,4 +166,20 @@ h1 {
 
 .twenty-five #empty-square {
   height: 60px;
+}
+
+#Btn {
+  position: absolute;
+  margin: 20% 15%;
+  height: 6%;
+  width: 6%;
+}
+
+dialog {
+  border: 1px solid black;
+}
+
+.crossed-out {
+  background-image: url('x.png');
+  background-size: 100%;
 }

@@ -2,7 +2,7 @@ const colorRed=document.getElementById('red')
 const colorYellow=document.getElementById('yellow')
 const colorGreen=document.getElementById('green')
 
-class animation{
+class Animation{
 
     constructor(timer){
         this.timer = timer
@@ -62,7 +62,7 @@ class animation{
 const speed = 27000
 
 setInterval(() => {
-    let animationColor = new animation(speed)
+    let animationColor = new Animation(speed)
 
     animationColor.redAnimation()
     animationColor.yellowAnimation()
